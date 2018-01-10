@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813A102B48667DFD7E4326CE /* Pods_foovisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39A51D7B38A659038EE1D02 /* Pods_foovisor.framework */; };
+		E16AAF042005C7080049CB8A /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AAF032005C7080049CB8A /* FoodTableViewCell.swift */; };
+		E16AAF062005EF5B0049CB8A /* BrickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AAF052005EF5B0049CB8A /* BrickTableViewCell.swift */; };
+		E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248D92005AF68005AD1B2 /* Service.swift */; };
+		E1A248DC2005AF69005AD1B2 /* ServiceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */; };
+		E1A248DF2005B158005AD1B2 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248DD2005B158005AD1B2 /* Responses.swift */; };
+		E1A248E22005B447005AD1B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248E12005B447005AD1B2 /* DataManager.swift */; };
 		E1B0C1612005A2EF0030B511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1602005A2EF0030B511 /* AppDelegate.swift */; };
 		E1B0C1632005A2EF0030B511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1622005A2EF0030B511 /* ViewController.swift */; };
 		E1B0C1662005A2EF0030B511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B0C1642005A2EF0030B511 /* Main.storyboard */; };
 		E1B0C1682005A2EF0030B511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B0C1672005A2EF0030B511 /* Assets.xcassets */; };
 		E1B0C16B2005A2EF0030B511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B0C1692005A2EF0030B511 /* LaunchScreen.storyboard */; };
+		E1B0C1732005ABB60030B511 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1722005ABB60030B511 /* FoodViewController.swift */; };
+		E1B0C1752005ABC70030B511 /* BrickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1742005ABC70030B511 /* BrickViewController.swift */; };
+		E1B0C1772005ABD80030B511 /* OkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1762005ABD80030B511 /* OkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C34DA44A515071AD5B2A65A /* Pods-foovisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foovisor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foovisor/Pods-foovisor.debug.xcconfig"; sourceTree = "<group>"; };
+		9FCE95EE3AC3CB04178780D3 /* Pods-foovisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foovisor.release.xcconfig"; path = "Pods/Target Support Files/Pods-foovisor/Pods-foovisor.release.xcconfig"; sourceTree = "<group>"; };
+		C39A51D7B38A659038EE1D02 /* Pods_foovisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foovisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E16AAF032005C7080049CB8A /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		E16AAF052005EF5B0049CB8A /* BrickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickTableViewCell.swift; sourceTree = "<group>"; };
+		E1A248D92005AF68005AD1B2 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConst.swift; sourceTree = "<group>"; };
+		E1A248DD2005B158005AD1B2 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		E1A248E12005B447005AD1B2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E1B0C15D2005A2EF0030B511 /* foovisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foovisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B0C1602005A2EF0030B511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B0C1622005A2EF0030B511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,9 @@
 		E1B0C1672005A2EF0030B511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B0C16A2005A2EF0030B511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B0C16C2005A2EF0030B511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B0C1722005ABB60030B511 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		E1B0C1742005ABC70030B511 /* BrickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickViewController.swift; sourceTree = "<group>"; };
+		E1B0C1762005ABD80030B511 /* OkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813A102B48667DFD7E4326CE /* Pods_foovisor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D13552A1AAD691153A14A4C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C39A51D7B38A659038EE1D02 /* Pods_foovisor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1B0C1542005A2EF0030B511 = {
 			isa = PBXGroup;
 			children = (
 				E1B0C15F2005A2EF0030B511 /* foovisor */,
 				E1B0C15E2005A2EF0030B511 /* Products */,
+				FA294B8CF176044F2314139F /* Pods */,
+				D13552A1AAD691153A14A4C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +89,30 @@
 			children = (
 				E1B0C1602005A2EF0030B511 /* AppDelegate.swift */,
 				E1B0C1622005A2EF0030B511 /* ViewController.swift */,
+				E1B0C1722005ABB60030B511 /* FoodViewController.swift */,
+				E16AAF032005C7080049CB8A /* FoodTableViewCell.swift */,
+				E1B0C1742005ABC70030B511 /* BrickViewController.swift */,
+				E16AAF052005EF5B0049CB8A /* BrickTableViewCell.swift */,
+				E1B0C1762005ABD80030B511 /* OkViewController.swift */,
+				E1A248D92005AF68005AD1B2 /* Service.swift */,
+				E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */,
+				E1A248DD2005B158005AD1B2 /* Responses.swift */,
+				E1A248E12005B447005AD1B2 /* DataManager.swift */,
 				E1B0C1642005A2EF0030B511 /* Main.storyboard */,
 				E1B0C1672005A2EF0030B511 /* Assets.xcassets */,
 				E1B0C1692005A2EF0030B511 /* LaunchScreen.storyboard */,
 				E1B0C16C2005A2EF0030B511 /* Info.plist */,
 			);
 			path = foovisor;
+			sourceTree = "<group>";
+		};
+		FA294B8CF176044F2314139F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C34DA44A515071AD5B2A65A /* Pods-foovisor.debug.xcconfig */,
+				9FCE95EE3AC3CB04178780D3 /* Pods-foovisor.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1B0C16F2005A2EF0030B511 /* Build configuration list for PBXNativeTarget "foovisor" */;
 			buildPhases = (
+				BB561FBFFCB1E092297A0CDD /* [CP] Check Pods Manifest.lock */,
 				E1B0C1592005A2EF0030B511 /* Sources */,
 				E1B0C15A2005A2EF0030B511 /* Frameworks */,
 				E1B0C15B2005A2EF0030B511 /* Resources */,
+				12B924DE06B316FC83E2D12A /* [CP] Embed Pods Frameworks */,
+				D374EE51C0A98B0380F4CEED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +185,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12B924DE06B316FC83E2D12A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-foovisor/Pods-foovisor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foovisor/Pods-foovisor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB561FBFFCB1E092297A0CDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-foovisor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D374EE51C0A98B0380F4CEED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foovisor/Pods-foovisor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1B0C1592005A2EF0030B511 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E1B0C1632005A2EF0030B511 /* ViewController.swift in Sources */,
+				E1B0C1732005ABB60030B511 /* FoodViewController.swift in Sources */,
+				E1B0C1752005ABC70030B511 /* BrickViewController.swift in Sources */,
+				E1B0C1772005ABD80030B511 /* OkViewController.swift in Sources */,
+				E1A248DF2005B158005AD1B2 /* Responses.swift in Sources */,
+				E1A248DC2005AF69005AD1B2 /* ServiceConst.swift in Sources */,
 				E1B0C1612005A2EF0030B511 /* AppDelegate.swift in Sources */,
+				E16AAF042005C7080049CB8A /* FoodTableViewCell.swift in Sources */,
+				E16AAF062005EF5B0049CB8A /* BrickTableViewCell.swift in Sources */,
+				E1A248E22005B447005AD1B2 /* DataManager.swift in Sources */,
+				E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +399,7 @@
 		};
 		E1B0C1702005A2EF0030B511 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C34DA44A515071AD5B2A65A /* Pods-foovisor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +415,7 @@
 		};
 		E1B0C1712005A2EF0030B511 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FCE95EE3AC3CB04178780D3 /* Pods-foovisor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
