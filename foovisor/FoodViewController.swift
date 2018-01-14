@@ -9,10 +9,10 @@
 import UIKit
 import Kingfisher
 
-class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate, UITableViewDataSource {
+class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let service:Service = Service()
+   
     var foods:[GetFoodResponse] = []
     let total = 100.0
     
@@ -22,21 +22,15 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initService()
-        service.getFoodRequest()
-        
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
     // MARK: - Table view data source
-  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foods.count
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -111,34 +105,4 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
     
     }
     
-    
-
-    
-    func initService() {
-        service.delegate = self
-    }
-    
-    func serviceDataDownloadSuccess(type: ServiceType, data: AnyObject) {
-        switch type {
-        case .GetFoodRequest:
-            if let foods:[GetFoodResponse] = data as? [GetFoodResponse] {
-                DataManager.foods = foods
-                self.foods = foods
-                tableView.reloadData()
-                
-                
-            } else {
-                print("Cant get foods")
-            }
-            break
-       
-        }
-        
-    }
-    
-    func serviceDataDownloadFailed(type: ServiceType, errorCode: Int, errorMessage: String) {
-        
-    }
-
- 
 }

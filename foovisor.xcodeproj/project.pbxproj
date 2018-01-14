@@ -15,7 +15,6 @@
 		E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248D92005AF68005AD1B2 /* Service.swift */; };
 		E1A248DC2005AF69005AD1B2 /* ServiceConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */; };
 		E1A248DF2005B158005AD1B2 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248DD2005B158005AD1B2 /* Responses.swift */; };
-		E1A248E22005B447005AD1B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248E12005B447005AD1B2 /* DataManager.swift */; };
 		E1B0C1612005A2EF0030B511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1602005A2EF0030B511 /* AppDelegate.swift */; };
 		E1B0C1632005A2EF0030B511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B0C1622005A2EF0030B511 /* ViewController.swift */; };
 		E1B0C1662005A2EF0030B511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B0C1642005A2EF0030B511 /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 		E1A248D92005AF68005AD1B2 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConst.swift; sourceTree = "<group>"; };
 		E1A248DD2005B158005AD1B2 /* Responses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
-		E1A248E12005B447005AD1B2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E1B0C15D2005A2EF0030B511 /* foovisor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foovisor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B0C1602005A2EF0030B511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B0C1622005A2EF0030B511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				E1A248D92005AF68005AD1B2 /* Service.swift */,
 				E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */,
 				E1A248DD2005B158005AD1B2 /* Responses.swift */,
-				E1A248E12005B447005AD1B2 /* DataManager.swift */,
 				E1673A34200B77DC000EAA8F /* UIColor+Hex.swift */,
 				E1673A33200B77DC000EAA8F /* Colors.swift */,
 				E1B0C1642005A2EF0030B511 /* Main.storyboard */,
@@ -271,7 +268,6 @@
 				E16AAF042005C7080049CB8A /* FoodTableViewCell.swift in Sources */,
 				E1673A36200B77DC000EAA8F /* UIColor+Hex.swift in Sources */,
 				E16AAF062005EF5B0049CB8A /* BrickTableViewCell.swift in Sources */,
-				E1A248E22005B447005AD1B2 /* DataManager.swift in Sources */,
 				E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,24 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ServiceDelegate {
 
     
     @IBOutlet weak var cView: UIView!
     @IBOutlet var btns: [UIButton]!
-   
+    
+    let service:Service = Service()
 
-    var tab0: UIViewController!
-    var tab1: UIViewController!
-    var tab2: UIViewController!
-    var viewControllers: [UIViewController]!
+    var tab0: FoodViewController!
+    var tab1: BrickViewController!
+    var tab2: OkViewController!
+    var viewControllers: [Any]!
     var selectedIndex: Int = 0
     
     @IBAction func didTab(_ sender: UIButton) {
         let previousIndex = selectedIndex
         selectedIndex = sender.tag
         btns[previousIndex].isSelected = false
-        let previousVC = viewControllers[previousIndex]
+        let previousVC = viewControllers[previousIndex] as! UIViewController
         previousVC.willMove(toParentViewController: nil)
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParentViewController()
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         
         sender.isSelected = true
         
-        let vc = viewControllers[selectedIndex]
+        let vc = viewControllers[selectedIndex] as! UIViewController
         addChildViewController(vc)
         vc.view.frame = cView.bounds
         cView.addSubview(vc.view)
@@ -45,23 +46,92 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        initService()
+        service.getFoodRequest()
+
+    }
+    
+    func getMenus(foods:[GetFoodResponse]) -> [[GetFoodResponse]]{
+        //starter, dish, dessert
+        var starters:[GetFoodResponse] = []
+        var dishes:[GetFoodResponse] = []
+        var desserts:[GetFoodResponse] = []
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        tab0 = storyboard.instantiateViewController(withIdentifier: "tab0")
-        tab1 = storyboard.instantiateViewController(withIdentifier: "tab1")
-        tab2 = storyboard.instantiateViewController(withIdentifier: "tab2")
+        var menus:[[GetFoodResponse]] = []
         
+        for food in foods {
+            if let type = food.type {
+                switch type {
+                case "starter":
+                    starters.append(food)
+                case "dish":
+                    dishes.append(food)
+                case "desert":
+                    desserts.append(food)
+                default:
+                    break
+                }
+            }
+        }
         
-        viewControllers = [tab0, tab1, tab2]
+        for starter in starters {
+            for dish in dishes {
+                for dessert in desserts {
+                    var menu:[GetFoodResponse] = []
+                    menu.append(starter)
+                    menu.append(dish)
+                    menu.append(dessert)
+                    
+                    menus.append(menu)
+                }
+            }
+        }
         
-        
-        btns[selectedIndex].isSelected = true
-        didTab(btns[selectedIndex])
-        
-        
-        
+        return menus
     }
 
-
+    
+    //MARK: Service delegates
+    func initService() {
+        service.delegate = self
+    }
+    
+    func serviceDataDownloadSuccess(type: ServiceType, data: AnyObject) {
+        switch type {
+        case .GetFoodRequest:
+            if let foods:[GetFoodResponse] = data as? [GetFoodResponse] {
+                
+                let menus = getMenus(foods: foods)
+                
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                tab0 = storyboard.instantiateViewController(withIdentifier: "tab0") as! FoodViewController
+                tab1 = storyboard.instantiateViewController(withIdentifier: "tab1") as! BrickViewController
+                tab2 = storyboard.instantiateViewController(withIdentifier: "tab2") as! OkViewController
+                
+                tab0.foods = foods
+                tab1.menus = menus
+                tab2.menus = menus
+                
+                viewControllers = [tab0, tab1, tab2]
+                
+                btns[selectedIndex].isSelected = true
+                didTab(btns[selectedIndex])
+                
+                print("got foods")
+            } else {
+                print("Cant get foods")
+            }
+                
+            break
+            
+        }
+        
+    }
+    
+    func serviceDataDownloadFailed(type: ServiceType, errorCode: Int, errorMessage: String) {
+        print("service error: \(errorMessage)")
+    }
+    
 }
 

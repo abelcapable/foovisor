@@ -12,64 +12,15 @@ import Kingfisher
 class BrickViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var foods:[GetFoodResponse] = []
+ 
     var menus:[[GetFoodResponse]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.foodsDownloaded), name:NSNotification.Name(rawValue: "foods_downloaded"), object: nil)
-        
-        if let _ = DataManager.foods {
-            foodsDownloaded()
-        }
-        
-    }
-    
-    @objc func foodsDownloaded() {
-    
-        foods = DataManager.foods!
-        
-        //starter, dish, dessert
-        var starters:[GetFoodResponse] = []
-        var dishes:[GetFoodResponse] = []
-        var desserts:[GetFoodResponse] = []
-        
-        for food in foods {
-            if let type = food.type {
-                switch type {
-                case "starter":
-                    starters.append(food)
-                case "dish":
-                    dishes.append(food)
-                case "desert":
-                    desserts.append(food)
-                default:
-                    break
-                }
-            }
-        }
-        
-        for starter in starters {
-            for dish in dishes {
-                for dessert in desserts {
-                    var menu:[GetFoodResponse] = []
-                    menu.append(starter)
-                    menu.append(dish)
-                    menu.append(dessert)
-                    
-                    menus.append(menu)
-                }
-            }
-        }
-        
-        tableView.reloadData()
-        
         
     }
     
