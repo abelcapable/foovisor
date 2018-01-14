@@ -16,6 +16,8 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
     var foods:[GetFoodResponse] = []
     let total = 100.0
     
+    var isExpandedSet:Set<Int> = Set<Int>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,10 +36,20 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
         return foods.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath) as! FoodTableViewCell
         cell.selectionStyle = .none
+        
+        
+        if isExpandedSet.contains(indexPath.row) {
+            cell.isExpanded = true
+        } else {
+            cell.isExpanded = false
+        }
+        
         
         let food:GetFoodResponse = foods[indexPath.row]
         
@@ -49,10 +61,13 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
         
         if let name = food.display_name {
             cell.lblFoodName.text = name
+           
         }
         
-        //if let fat = food.
-        
+        if let fat = food.lipids {
+            cell.lblFat.text =  String(Int(fat))
+        }
+    
         if let proteins = food.proteins {
             cell.lblProteins.text = String(proteins)
             cell.circularProteins.setProgress(value: CGFloat(Double(proteins)), animationDuration: 2.0)
@@ -72,9 +87,28 @@ class FoodViewController: UIViewController, ServiceDelegate, UITableViewDelegate
         if let total = food.cal {
             cell.lblTotal.text = String(total)
             cell.circularTotal.setProgress(value: CGFloat(Double(total)/5), animationDuration: 2.0)
+            
+             cell.lblCellCals.text = "\(total) kcal"
         }
       
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FoodTableViewCell
+            else { return }
+        
+
+        if isExpandedSet.contains(indexPath.row) {
+            isExpandedSet.remove(indexPath.row)
+        } else {
+            isExpandedSet.insert(indexPath.row)
+        }
+        
+        tableView.beginUpdates()
+        cell.isExpanded = !cell.isExpanded
+        tableView.endUpdates()
+    
     }
     
     
