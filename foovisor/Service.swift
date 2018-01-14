@@ -67,7 +67,7 @@ class Service {
         var request = URLRequest(url: NSURL(string: "\(ServiceConst.getBaseUrl())?foo=bar")! as URL)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue(HeaderValue.applicationJson.rawValue, forHTTPHeaderField: HeaderField.contentType.rawValue)
-        request.setValue("Bearer iwn-31@!3pf(w]pmarewj236^in", forHTTPHeaderField: HeaderField.authorization.rawValue)
+        request.setValue(ServiceConst.getBearerToken(), forHTTPHeaderField: HeaderField.authorization.rawValue)
        
         Alamofire.request(request)
             .validate(statusCode: 200..<300)

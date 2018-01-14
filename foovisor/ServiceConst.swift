@@ -16,6 +16,12 @@ class ServiceConst: NSObject {
 
     }
     
+    class func getBearerToken()->String{
+        
+        return "Bearer iwn-31@!3pf(w]pmarewj236^in"
+        
+    }
+    
     class func getDateFormatString() -> String {
         return "yyyy-MM-dd HH:mm:ss"
     }
