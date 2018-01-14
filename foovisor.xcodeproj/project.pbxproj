@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		813A102B48667DFD7E4326CE /* Pods_foovisor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39A51D7B38A659038EE1D02 /* Pods_foovisor.framework */; };
+		E1673A35200B77DC000EAA8F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1673A33200B77DC000EAA8F /* Colors.swift */; };
+		E1673A36200B77DC000EAA8F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1673A34200B77DC000EAA8F /* UIColor+Hex.swift */; };
 		E16AAF042005C7080049CB8A /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AAF032005C7080049CB8A /* FoodTableViewCell.swift */; };
 		E16AAF062005EF5B0049CB8A /* BrickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16AAF052005EF5B0049CB8A /* BrickTableViewCell.swift */; };
 		E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A248D92005AF68005AD1B2 /* Service.swift */; };
@@ -28,6 +30,8 @@
 		6C34DA44A515071AD5B2A65A /* Pods-foovisor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foovisor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foovisor/Pods-foovisor.debug.xcconfig"; sourceTree = "<group>"; };
 		9FCE95EE3AC3CB04178780D3 /* Pods-foovisor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foovisor.release.xcconfig"; path = "Pods/Target Support Files/Pods-foovisor/Pods-foovisor.release.xcconfig"; sourceTree = "<group>"; };
 		C39A51D7B38A659038EE1D02 /* Pods_foovisor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foovisor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1673A33200B77DC000EAA8F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E1673A34200B77DC000EAA8F /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		E16AAF032005C7080049CB8A /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		E16AAF052005EF5B0049CB8A /* BrickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickTableViewCell.swift; sourceTree = "<group>"; };
 		E1A248D92005AF68005AD1B2 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				E1A248DA2005AF69005AD1B2 /* ServiceConst.swift */,
 				E1A248DD2005B158005AD1B2 /* Responses.swift */,
 				E1A248E12005B447005AD1B2 /* DataManager.swift */,
+				E1673A34200B77DC000EAA8F /* UIColor+Hex.swift */,
+				E1673A33200B77DC000EAA8F /* Colors.swift */,
 				E1B0C1642005A2EF0030B511 /* Main.storyboard */,
 				E1B0C1672005A2EF0030B511 /* Assets.xcassets */,
 				E1B0C1692005A2EF0030B511 /* LaunchScreen.storyboard */,
@@ -255,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B0C1632005A2EF0030B511 /* ViewController.swift in Sources */,
+				E1673A35200B77DC000EAA8F /* Colors.swift in Sources */,
 				E1B0C1732005ABB60030B511 /* FoodViewController.swift in Sources */,
 				E1B0C1752005ABC70030B511 /* BrickViewController.swift in Sources */,
 				E1B0C1772005ABD80030B511 /* OkViewController.swift in Sources */,
@@ -262,6 +269,7 @@
 				E1A248DC2005AF69005AD1B2 /* ServiceConst.swift in Sources */,
 				E1B0C1612005A2EF0030B511 /* AppDelegate.swift in Sources */,
 				E16AAF042005C7080049CB8A /* FoodTableViewCell.swift in Sources */,
+				E1673A36200B77DC000EAA8F /* UIColor+Hex.swift in Sources */,
 				E16AAF062005EF5B0049CB8A /* BrickTableViewCell.swift in Sources */,
 				E1A248E22005B447005AD1B2 /* DataManager.swift in Sources */,
 				E1A248DB2005AF69005AD1B2 /* Service.swift in Sources */,
