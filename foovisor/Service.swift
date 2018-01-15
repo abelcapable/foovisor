@@ -80,9 +80,11 @@ class Service {
                         let dict = self.convertToDictionary(text: responseString)
                         if let errorMessage = dict?["message"] as? String{
                             self.delegate?.serviceDataDownloadFailed(type: ServiceType.GetFoodRequest, errorCode: -1, errorMessage: errorMessage)
+                        } else {
+                            self.delegate?.serviceDataDownloadFailed(type: ServiceType.GetFoodRequest, errorCode: -2, errorMessage: error.localizedDescription)
                         }
                     }else {
-                        self.delegate?.serviceDataDownloadFailed(type: ServiceType.GetFoodRequest, errorCode: -2, errorMessage: "\(error)")
+                        self.delegate?.serviceDataDownloadFailed(type: ServiceType.GetFoodRequest, errorCode: -3, errorMessage: "\(error)")
                     }
                 case .success(let responseObject):
                     print("responseobject: \(responseObject)")

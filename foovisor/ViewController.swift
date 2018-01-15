@@ -22,23 +22,27 @@ class ViewController: UIViewController, ServiceDelegate {
     var viewControllers: [Any]!
     var selectedIndex: Int = 0
     
+    var isSuceed = false
+    
     @IBAction func didTab(_ sender: UIButton) {
-        let previousIndex = selectedIndex
-        selectedIndex = sender.tag
-        btns[previousIndex].isSelected = false
-        let previousVC = viewControllers[previousIndex] as! UIViewController
-        previousVC.willMove(toParentViewController: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParentViewController()
+        if isSuceed {
+            let previousIndex = selectedIndex
+            selectedIndex = sender.tag
+            btns[previousIndex].isSelected = false
+            let previousVC = viewControllers[previousIndex] as! UIViewController
+            previousVC.willMove(toParentViewController: nil)
+            previousVC.view.removeFromSuperview()
+            previousVC.removeFromParentViewController()
         
         
-        sender.isSelected = true
+            sender.isSelected = true
         
-        let vc = viewControllers[selectedIndex] as! UIViewController
-        addChildViewController(vc)
-        vc.view.frame = cView.bounds
-        cView.addSubview(vc.view)
-        vc.didMove(toParentViewController: self)
+            let vc = viewControllers[selectedIndex] as! UIViewController
+            addChildViewController(vc)
+            vc.view.frame = cView.bounds
+            cView.addSubview(vc.view)
+            vc.didMove(toParentViewController: self)
+        }
         
     }
     
@@ -46,6 +50,10 @@ class ViewController: UIViewController, ServiceDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        for btn in btns {
+            btn.isHidden = true
+        }
+        
         initService()
         service.getFoodRequest()
 
@@ -89,6 +97,31 @@ class ViewController: UIViewController, ServiceDelegate {
         
         return menus
     }
+    
+    //MARK: retry alert
+    func retryAlert(message:String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            // ...
+            
+        }
+        alertController.addAction(cancelAction)
+        
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
+            // ...
+           
+            self.service.getFoodRequest()
+        }
+        
+        alertController.addAction(retryAction)
+        
+        
+        self.present(alertController, animated: true) {
+            // ...
+        }
+        
+    }
 
     
     //MARK: Service delegates
@@ -100,6 +133,8 @@ class ViewController: UIViewController, ServiceDelegate {
         switch type {
         case .GetFoodRequest:
             if let foods:[GetFoodResponse] = data as? [GetFoodResponse] {
+                
+                isSuceed = true
                 
                 let menus = getMenus(foods: foods)
                 
@@ -114,6 +149,10 @@ class ViewController: UIViewController, ServiceDelegate {
                 tab2.menus = menus
                 
                 viewControllers = [tab0, tab1, tab2]
+                
+                for btn in btns {
+                    btn.isHidden = false
+                }
                 
                 btns[selectedIndex].isSelected = true
                 didTab(btns[selectedIndex])
@@ -131,6 +170,8 @@ class ViewController: UIViewController, ServiceDelegate {
     
     func serviceDataDownloadFailed(type: ServiceType, errorCode: Int, errorMessage: String) {
         print("service error: \(errorMessage)")
+        retryAlert(message: errorMessage)
+        
     }
     
 }
